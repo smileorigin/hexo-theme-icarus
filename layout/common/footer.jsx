@@ -11,6 +11,7 @@ class Footer extends Component {
             siteYear,
             author,
             links,
+            icp,
             showVisitorCounter,
             visitorCounterTitle
         } = this.props;
@@ -25,7 +26,10 @@ class Footer extends Component {
                         <p class="size-small">
                             <span dangerouslySetInnerHTML={{ __html: `&copy; ${siteYear} ${author || siteTitle}` }}></span>
                             &nbsp;&nbsp;Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>&nbsp;&&nbsp;
-                            <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                            <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>&nbsp;
+                            {icp ?
+                                <a class="has-link-black-ter" href="//www.beian.miit.gov.cn" target="_blank">{icp}</a>
+                            : null}
                             {showVisitorCounter ? <br /> : null}
                             {showVisitorCounter ? <span id="busuanzi_container_site_uv"
                                 dangerouslySetInnerHTML={{ __html: visitorCounterTitle }}></span> : null}
@@ -36,7 +40,7 @@ class Footer extends Component {
                             {Object.keys(links).map(name => {
                                 const link = links[name];
                                 return <p class="control">
-                                    <a class={`button is-transparent ${link.icon ? 'is-large' : ''}`} target="_blank" rel="noopener" title={name} href={link.url}>
+                                    <a class={`button is-transparent ${link.icon ? 'is-large' : ''} icon-button`} target="_blank" rel="noopener" title={name} href={link.url}>
                                         {link.icon ? <i class={link.icon}></i> : name}
                                     </a>
                                 </p>;
@@ -52,7 +56,7 @@ class Footer extends Component {
 module.exports = cacheComponent(Footer, 'common.footer', props => {
     const { config, helper } = props;
     const { url_for, _p, date } = helper;
-    const { logo, title, author, footer, plugins } = config;
+    const { logo, title, author, footer, plugins, icp } = config;
 
     const links = {};
     if (footer && footer.links) {
@@ -73,6 +77,7 @@ module.exports = cacheComponent(Footer, 'common.footer', props => {
         siteYear: date(new Date(), 'YYYY'),
         author,
         links,
+        icp,
         showVisitorCounter: plugins && plugins.busuanzi === true,
         visitorCounterTitle: _p('plugin.visitor', '<span id="busuanzi_value_site_uv">0</span>')
     };

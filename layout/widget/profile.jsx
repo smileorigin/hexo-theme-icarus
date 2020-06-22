@@ -9,7 +9,7 @@ class Profile extends Component {
         }
         return <div class="level is-mobile">
             {links.filter(link => typeof link === 'object').map(link => {
-                return <a class="level-item button is-transparent is-marginless"
+                return <a class="level-item button is-transparent is-marginless icon-button"
                     target="_blank" rel="noopener" title={link.name} href={link.url}>
                     {'icon' in link ? <i class={link.icon}></i> : link.name}
                 </a>;
@@ -72,9 +72,6 @@ class Profile extends Component {
                         </div>
                     </div>
                 </nav>
-                {followLink ? <div class="level">
-                    <a class="level-item button is-primary is-rounded" href={followLink} target="_blank" rel="noopener">{followTitle}</a>
-                </div> : null}
                 {socialLinks ? this.renderSocialLinks(socialLinks) : null}
             </div>
         </div>;

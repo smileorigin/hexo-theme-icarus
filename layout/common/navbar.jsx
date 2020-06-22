@@ -43,6 +43,9 @@ class Navbar extends Component {
                         })}
                     </div> : null}
                     <div class="navbar-end">
+                        <a class="navbar-item" id="dark-switch" title="Dark Mode" href="javascript:;">
+                            <i class="fas fa-moon" id="dark-icon"></i>
+                        </a>
                         {Object.keys(links).length ? <Fragment>
                             {Object.keys(links).map(name => {
                                 const link = links[name];

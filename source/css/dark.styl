@@ -1,0 +1,286 @@
+/* ---------------------------------
+ *            dark mode
+ * --------------------------------- */
+dark-primary = #BB86FC
+dark-secondary = #03DAC6
+dark-surface = #121212
+dark-dark = #000000
+dark-font-primary = #FFFFFF
+dark-font-secondary = #ABABAB
+dark-border = #3636365c
+dark-hover-primary = #BA94F5
+dark-hover-secondary = rgba(0,0,0,0.18)
+dark-hover-more-button = #474748
+
+body.dark
+    background-color: dark-dark
+
+.dark
+    .navbar-logo,
+    .footer-logo
+        .logo-img
+            display: none
+        .logo-img-dark
+            display: inline-block
+
+    .card,
+    .footer,
+    .navbar,
+    .navbar-menu
+        background: dark-surface
+
+    .pace-progress
+        background-color: dark-primary
+
+    p
+        color: dark-font-primary
+
+    a
+        color: dark-font-secondary
+
+    a:hover
+        color: dark-primary
+
+    .link-muted:hover
+        color: dark-primary !important
+
+    .title .link-muted
+        color: dark-font-primary
+
+    a.navbar-item:focus,
+    .navbar-link:focus,
+    a.navbar-item:focus-within,
+    .navbar-link:focus-within,
+    a.navbar-item:hover,
+    .navbar-link:hover,
+    a.navbar-item.is-active,
+    .navbar-link.is-active
+        color: dark-primary
+        background-color: inherit
+
+    .navbar-main .navbar-item.is-active
+        color: dark-primary
+
+    .has-link-black-ter
+        color: dark-font-primary !important
+
+    .button
+        color: dark-primary
+        background-color: dark-surface
+
+    .button:hover
+        color: dark-dark
+        background-color: dark-hover-primary
+
+    .button.is-light, article.article .article-more
+        color: dark-font-primary
+        background-color: dark-hover-secondary
+
+    .button.is-light, article.article .article-more:hover
+        background-color: dark-hover-more-button
+
+    .button:focus:not(:active), .button.is-focused:not(:active)
+        box-shadow: none
+
+    .menu-list a:hover
+        background-color: dark-hover-secondary
+
+    #back-to-top
+        color: dark-primary
+
+    #back-to-top:hover
+        color: dark-hover-primary
+
+    .post-navigation
+        background-color: dark-dark
+
+    /* ---------------------------------
+     *             tag
+     * --------------------------------- */
+    .tag
+        color: dark-font-primary
+        background-color: dark-primary
+
+    .tag:not(body).is-link
+        color: dark-dark
+        background-color: dark-primary
+
+    .tag:not(body).is-primary
+        background-color: dark-primary
+
+    .timeline .media:last-child:after
+        background: none
+
+    /* ---------------------------------
+     *             article
+     * --------------------------------- */
+    h1,h2,h3,h4,h5,h6
+        color: dark-font-primary !important
+
+    .article
+        .content
+            ol>li,
+            ol>li>p,
+            ul>li,
+            p
+                color: dark-font-secondary
+
+            p>strong
+                color: dark-primary
+
+            blockquote
+                background-color: dark-dark
+
+                p
+                    color: dark-font-primary
+
+            strong
+                color: #946ec3 !important
+
+            table
+                color: dark-font-secondary
+
+                td,
+                th
+                    border-color: dark-border
+
+                thead th
+                    color: dark-font-secondary
+
+        .highlight-body
+            color: dark-font-primary
+
+        .highlight
+            background-color: dark-dark
+
+            .gutter
+                color: dark-font-secondary
+
+            .highlight-body
+                color: dark-font-primary
+
+    /* ---------------------------------
+     *             customize
+     * --------------------------------- */
+    .icon-button
+        color: dark-font-primary
+
+    .icon-button:hover
+        color: dark-primary
+        background-color: dark-hover-secondary
+
+    /* ---------------------------------
+     *             pagination
+     * --------------------------------- */
+    .pagination
+        background: dark-dark
+
+        .pagination-link.is-current
+            color: dark-dark
+            border-color: dark-primary
+            background-color: dark-primary
+
+        .pagination-link:hover
+            color: dark-font-primary !important
+
+        .pagination-link:not(.is-current):hover, .pagination-previous a:hover, .pagination-next a:hover
+            color: dark-primary !important
+
+        .pagination-link:not(.is-current), .pagination-previous, .pagination-next
+            color: dark-font-secondary !important
+            background: dark-surface
+
+        .pagination-previous a, .pagination-next a
+            color: dark-font-secondary !important
+
+    /* ---------------------------------
+     *            search box
+     * --------------------------------- */
+    .searchbox
+        .searchbox-container,
+        .searchbox-input-wrapper .searchbox-input,
+        .searchbox-header
+        .searchbox-result-item
+            color: dark-font-primary
+            background-color: dark-surface
+            border-color: dark-font-secondary
+        .searchbox-body .searchbox-result-section .searchbox-result-item:hover,
+        .searchbox-body .searchbox-result-section .searchbox-result-item.active
+            background-color: dark-hover-secondary
+        .searchbox-container .searchbox-input-wrapper .searchbox-close:hover
+            color: dark-font-primary
+            background-color: dark-surface
+        .searchbox-input
+            background-color: dark-surface
+        .searchbox-result-item em
+            color: dark-font-primary
+            background: dark-primary
+        .searchbox-close:hover
+            background: inherit
+
+    /* ---------------------------------
+     *           git comment
+     * --------------------------------- */
+    .gt-container
+        a
+            color: dark-primary
+            border-bottom: none
+
+        a:hover
+            color: dark-hover-primary
+            border-bottom: none
+
+        .gt-btn
+            border: none
+            color: dark-dark
+            background-color: dark-primary
+            margin-top: 8px
+
+        .gt-btn:hover
+            background-color: dark-hover-primary
+
+        .gt-counts
+            color: dark-font-secondary
+
+        .gt-user-name
+            color: dark-font-secondary
+
+        .gt-popup
+            background-color: dark-dark
+
+        .gt-header-textarea
+            border: none
+            color: dark-font-primary
+            background-color: dark-dark
+
+        .gt-header-textarea:hover
+            background-color: dark-dark
+
+        .gt-header-preview
+            background-color: dark-dark
+
+        .gt-comment-content, .gt-comment-admin .gt-comment-content
+            background-color: dark-dark
+
+        .gt-comment-content:hover, .gt-comment-admin .gt-comment-content:hover
+            webkit-box-shadow: 0 0.625em 3.75em 0 dark-dark
+            box-shadow: 0 0.625em 3.75em 0 dark-dark
+
+        .gt-svg svg
+            fill: dark-primary
+
+        .markdown-body
+            p
+                color: dark-font-secondary
+
+            ul
+                color: dark-font-secondary
+                list-style: disc
+
+            ol
+                color: dark-font-secondary
+
+            pre
+                color: dark-font-primary
+                background-color: dark-surface
+
