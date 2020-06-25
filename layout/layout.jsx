@@ -15,7 +15,7 @@ module.exports = class extends Component {
         const language = page.lang || page.language || config.language;
         const columnCount = Widgets.getColumnCount(config.widgets);
         const contentClass = () => {
-            const columnCountMap = ['is-9-widescreen is-12', 'is-12', 'is-8-tablet is-8-desktop is-8-widescreen', 'is-8-tablet is-8-desktop is-6-widescreen']
+            const columnCountMap = ['is-12-tablet is-9-desktop is-9-widescreen ', 'is-12', 'is-8-tablet is-8-desktop is-8-widescreen', 'is-8-tablet is-8-desktop is-6-widescreen']
             if (is_home()) {
                 return columnCountMap[columnCount];
             } else if (is_post() && config.toc) {
@@ -44,7 +44,7 @@ module.exports = class extends Component {
                                 if (config.toc) {
                                     config.widgets = [{type: 'toc', position: 'right', sticky: true}]
                                     return <Fragment>
-                                        <Widgets site={site} config={config} helper={helper} page={page} position={'right'} />
+                                        <Widgets site={site} config={config} helper={helper} page={page} position={'right'} is_post={is_post()} />
                                         </Fragment>
                                 }
                             })()}

@@ -30,7 +30,10 @@ function getColumnCount(widgets) {
     return [hasColumn(widgets, 'left'), hasColumn(widgets, 'right')].filter(v => !!v).length + 1;
 }
 
-function getColumnSizeClass(columnCount) {
+function getColumnSizeClass(columnCount, toc, is_post) {
+    if (toc && is_post) {
+        return 'is-hidden-tablet-only is-3-desktop is-3-widescreen';
+    }
     switch (columnCount) {
         case 2:
             return 'is-4-tablet is-4-desktop is-4-widescreen';
@@ -59,7 +62,7 @@ function isColumnSticky(config, position) {
 
 class Widgets extends Component {
     render() {
-        const { site, config, helper, page, position } = this.props;
+        const { site, config, helper, page, position, is_post } = this.props;
         const widgets = formatWidgets(config.widgets)[position] || [];
         const columnCount = getColumnCount(config.widgets);
 
@@ -70,7 +73,7 @@ class Widgets extends Component {
         return <div class={classname({
             'column': true,
             ['column-' + position]: true,
-            [getColumnSizeClass(columnCount)]: true,
+            [getColumnSizeClass(columnCount, config.toc, is_post)]: true,
             [getColumnVisibilityClass(columnCount, position)]: true,
             [getColumnOrderClass(position)]: true,
             'is-sticky': isColumnSticky(config, position)
