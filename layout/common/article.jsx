@@ -84,6 +84,16 @@ module.exports = class extends Component {
                             return <a class="link-muted mr-2" rel="tag" href={url_for(tag.path)}>{tag.name}</a>;
                         })}
                     </div> : null}
+                    {/* Copyright */}
+                    {!index && page.layout === 'post' ?
+                    <ul class="post-copyright">
+                        <li><strong>本文标题：</strong><a href={url_for(page.permalink)}>{page.title}</a></li>
+                        <li><strong>本文作者：</strong><a href={url_for(config.url)}>{config.author}</a></li>
+                        <li><strong>发布时间：</strong>{date(page.date, 'YYYY-MM-DD HH:mm')}</li>
+                        {page.updated - page.date !== 0 ? <li><strong>最后更新：</strong>{date(page.updated, 'YYYY-MM-DD HH:mm')}</li> : null}
+                        <li><strong>本文链接：</strong><a href={url_for(page.permalink)}>{url_for(page.permalink)}</a></li>
+                        <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY 4.0</a> 许可协议。转载请注明出处！</li>
+                    </ul> : null}
                     {/* "Read more" button */}
                     {index && page.excerpt ? <a class="article-more button is-small size-small" href={`${url_for(page.path)}#more`}>{__('article.more')}</a> : null}
                     {/* Share button */}

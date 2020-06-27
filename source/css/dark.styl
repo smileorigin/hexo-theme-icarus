@@ -11,6 +11,7 @@ dark-border = #3636365c
 dark-hover-primary = #BA94F5
 dark-hover-secondary = rgba(0,0,0,0.18)
 dark-hover-more-button = #474748
+dark-darker-primary = #946ec3
 
 body.dark
     background-color: dark-dark
@@ -115,6 +116,23 @@ body.dark
         color: dark-font-secondary
 
     /* ---------------------------------
+     *             copyright
+     * --------------------------------- */
+    .post-copyright
+        color: dark-font-secondary
+        border-left: 3px solid dark-font-secondary
+        background-color: dark-dark
+
+        a
+            color: dark-primary
+
+        a:hover
+            color: dark-font-primary
+
+        strong
+            color: dark-font-primary
+
+    /* ---------------------------------
      *             article
      * --------------------------------- */
     h1,h2,h3,h4,h5,h6
@@ -138,7 +156,7 @@ body.dark
                     color: dark-font-primary
 
             strong
-                color: #946ec3 !important
+                color: dark-darker-primary !important
 
             table
                 color: dark-font-secondary
