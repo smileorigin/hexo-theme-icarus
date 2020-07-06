@@ -4,7 +4,7 @@
 <br>
 <a href="https://smileorigin.site">Preview</a> |
 <a href="https://ppoffice.github.io/hexo-theme-icarus/categories/">Documentation</a> |
-<a href="https://gitter.im/hexo-theme-icarus/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">Chat on Gitter</a>
+<a href="./README_OFFICIAL.md">Official README</a> |
 <br>
 </p>
 
